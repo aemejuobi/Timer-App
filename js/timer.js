@@ -15,6 +15,7 @@ class Timer {
         }
     }
 
+    // start function
     start = () => {
         if(this.onStart){
             this.onStart(this.timeRemaining);
@@ -24,29 +25,32 @@ class Timer {
         clearInterval(timer);
     }
 
+    // tick function
     tick = () => {
-        // console.log(this.timeRemaining);
         if(this.timeRemaining <= 0){
             this.pause();
             if(this.onComplete){
                 this.onComplete();
             }
         }else{
-            this.timeRemaining = this.timeRemaining - .02;
+            this.timeRemaining -= .02;
             if(this.onTick){
                 this.onTick(this.timeRemaining);
             }
         }
     }
-    
+
+    // getter for the time remaining
     get timeRemaining(){
         return parseFloat(this.durationInput.value);
     }
 
+    // sets timer
     set timeRemaining(time){
         this.durationInput.value = time.toFixed(2);
     }
 
+     // pauses timer
     pause = () => {
         clearInterval(this.interval);
     }
