@@ -18,4 +18,3 @@ const timer = new Timer(durationInput, startBtn, pauseBtn, {
         console.log("Timer is completed");
     }
 });
-// timer.start();
