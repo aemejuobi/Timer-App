@@ -5,9 +5,9 @@ class Timer {
         this.pauseBtn = pauseBtn;
 
         this.startBtn.addEventListener('click', this.start);
-        this.startBtn.addEventListener('touchend', this.start);
         this.pauseBtn.addEventListener('click', this.pause);
-        this.pauseBtn.addEventListener('touchend', this.pause);
+        this.startBtn.addEventListener('touch', this.start);
+        this.pauseBtn.addEventListener('touch', this.pause);
 
         // check if callbacks were provided
         if(callbacks){
